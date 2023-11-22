@@ -1,0 +1,244 @@
+[ERR]	2023/11/19 19:45:48 server.go:3215: http: panic serving 127.0.0.1:49549: runtime error: invalid memory address or nil pointer dereference
+goroutine 22 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cc60, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d0aad, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0xc000026040?, {0x1467840, 0xc00018e000}, {0x13d0aad?, 0xd?}, {0x138a1a0, 0xc0000102d0})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000b4120, {0x1469d00?, 0xc00018e000}, 0x10f53a9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x14a
+net/http.HandlerFunc.ServeHTTP(0xc0000ec300?, {0x1469d00?, 0xc00018e000?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469d00, 0xc00018e000}, 0xc0000ee400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000f48d0?}, {0x1469d00, 0xc00018e000}, 0xc0000ee400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0000f6120, {0x1469f28, 0xc0000f47e0})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:44:13 server.go:3215: http: panic serving 127.0.0.1:49541: runtime error: invalid memory address or nil pointer dereference
+goroutine 17 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cae0, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d092d, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14676a0, 0xc0001b20e0}, {0x13d092d?, 0xd?}, {0x138a020, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc000026160, {0x1469b60?, 0xc0001b20e0}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x14a
+net/http.HandlerFunc.ServeHTTP(0xc00018c080?, {0x1469b60?, 0xc0001b20e0?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469b60, 0xc0001b20e0}, 0xc0001c8000)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c4090?}, {0x1469b60, 0xc0001b20e0}, 0xc0001c8000)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c6000, {0x1469d88, 0xc0001368d0})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:44:18 server.go:3215: http: panic serving 127.0.0.1:49543: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cae0, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d092d, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14676a0, 0xc0001b22a0}, {0x13d092d?, 0xd?}, {0x138a020, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc000026160, {0x1469b60?, 0xc0001b22a0}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x14a
+net/http.HandlerFunc.ServeHTTP(0xc00018c100?, {0x1469b60?, 0xc0001b22a0?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469b60, 0xc0001b22a0}, 0xc0001c8200)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c4210?}, {0x1469b60, 0xc0001b22a0}, 0xc0001c8200)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c61b0, {0x1469d88, 0xc0001368d0})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:44:48 server.go:3215: http: panic serving 127.0.0.1:49545: runtime error: invalid memory address or nil pointer dereference
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cae0, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d092d, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14676a0, 0xc0001b2460}, {0x13d092d?, 0xd?}, {0x138a020, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc000026160, {0x1469b60?, 0xc0001b2460}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x14a
+net/http.HandlerFunc.ServeHTTP(0xc00018c180?, {0x1469b60?, 0xc0001b2460?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469b60, 0xc0001b2460}, 0xc0001c8400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c4360?}, {0x1469b60, 0xc0001b2460}, 0xc0001c8400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c6360, {0x1469d88, 0xc0001368d0})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+bexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:35:31 server.go:3215: http: panic serving 127.0.0.1:49504: runtime error: invalid memory address or nil pointer dereference
+goroutine 25 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc00010a0e0}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc00010a0e0}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc0000f2280?, {0x1469c60?, 0xc00010a0e0?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000c4292?, {0x1469c60, 0xc00010a0e0}, 0xc0000f6400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc000099770?}, {0x1469c60, 0xc00010a0e0}, 0xc0000f6400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0000f0360, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:36:01 server.go:3215: http: panic serving 127.0.0.1:49506: runtime error: invalid memory address or nil pointer dereference
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc00007a1c0}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc00007a1c0}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc000060080?, {0x1469c60?, 0xc00007a1c0?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001e112?, {0x1469c60, 0xc00007a1c0}, 0xc000072200)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000621e0?}, {0x1469c60, 0xc00007a1c0}, 0xc000072200)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0000641b0, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:37:14 server.go:3215: http: superfluous response.WriteHeader call from main.(*application).home (handlers.go:15)
+[ERR]	2023/11/19 19:37:25 server.go:3215: http: panic serving 127.0.0.1:49508: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc0001b2540}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc0001b2540}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc000188180?, {0x1469c60?, 0xc0001b2540?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469c60, 0xc0001b2540}, 0xc0001d0300)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c42d0?}, {0x1469c60, 0xc0001b2540}, 0xc0001d0300)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c62d0, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:37:25 server.go:3215: http: panic serving 127.0.0.1:49510: runtime error: invalid memory address or nil pointer dereference
+goroutine 39 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc0001b2700}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc0001b2700}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc000188200?, {0x1469c60?, 0xc0001b2700?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469c60, 0xc0001b2700}, 0xc0001d0400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c44b0?}, {0x1469c60, 0xc0001b2700}, 0xc0001d0400)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c6510, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:37:26 server.go:3215: http: panic serving 127.0.0.1:49512: runtime error: invalid memory address or nil pointer dereference
+goroutine 41 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc0001b28c0}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc0001b28c0}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc000188280?, {0x1469c60?, 0xc0001b28c0?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469c60, 0xc0001b28c0}, 0xc0001d0500)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c4600?}, {0x1469c60, 0xc0001b28c0}, 0xc0001d0500)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c66c0, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:37:32 server.go:3215: http: panic serving 127.0.0.1:49514: runtime error: invalid memory address or nil pointer dereference
+goroutine 43 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc0001b2a80}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc0001b2a80}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc000188300?, {0x1469c60?, 0xc0001b2a80?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469c60, 0xc0001b2a80}, 0xc0001d0700)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0001c4750?}, {0x1469c60, 0xc0001b2a80}, 0xc0001d0700)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0001c6870, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
+[ERR]	2023/11/19 19:38:02 server.go:3215: http: panic serving 127.0.0.1:49516: runtime error: invalid memory address or nil pointer dereference
+goroutine 27 [running]:
+net/http.(*conn).serve.func1()
+	/usr/local/opt/go/libexec/src/net/http/server.go:1854 +0xbf
+panic({0x137cb80, 0x1690e30})
+	/usr/local/opt/go/libexec/src/runtime/panic.go:890 +0x263
+html/template.(*Template).lookupAndEscapeTemplate(0x0, {0x13d09cd, 0x4})
+	/usr/local/opt/go/libexec/src/html/template/template.go:146 +0x50
+html/template.(*Template).ExecuteTemplate(0x0?, {0x14677a0, 0xc00010a2a0}, {0x13d09cd?, 0x12f0ae0?}, {0x138a0c0, 0x16d1640})
+	/usr/local/opt/go/libexec/src/html/template/template.go:135 +0x38
+main.(*application).view(0xc0000c8120, {0x1469c60?, 0xc00010a2a0}, 0x10f52e9?)
+	/Users/damzxyno/GolandProjects/snippetbox/cmd/web/handlers.go:96 +0x332
+net/http.HandlerFunc.ServeHTTP(0xc0000f2300?, {0x1469c60?, 0xc00010a2a0?}, 0x100d48a?)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2122 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x1469c60, 0xc00010a2a0}, 0xc0000f6600)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2500 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000998f0?}, {0x1469c60, 0xc00010a2a0}, 0xc0000f6600)
+	/usr/local/opt/go/libexec/src/net/http/server.go:2936 +0x316
+net/http.(*conn).serve(0xc0000f0510, {0x1469e88, 0xc000099410})
+	/usr/local/opt/go/libexec/src/net/http/server.go:1995 +0x612
+created by net/http.(*Server).Serve
+	/usr/local/opt/go/libexec/src/net/http/server.go:3089 +0x5ed
