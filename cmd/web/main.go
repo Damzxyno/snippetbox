@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/justinas/alice"
 	"html/template"
 	"log"
 	"net/http"
@@ -26,13 +27,13 @@ type application struct {
 	htmlTemplates map[string]*template.Template
 }
 
-func (app *application) routes() *http.ServeMux {
+func (app *application) routes() http.Handler {
 	fS := http.FileServer(http.Dir("./ui/static/"))
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", app.home)
 	mux.HandleFunc("/about-us", app.aboutUs)
 	mux.HandleFunc("/damzxyno", app.damzxyno)
-	mux.HandleFunc("/jiossm", app.jiossm)
+	mux.HandleFunc("/panic", app.panic)
 	mux.Handle("/static/", http.StripPrefix("/static", fS))
 	mux.HandleFunc("/snippet/view", app.view)
 	mux.HandleFunc("/err", func(w http.ResponseWriter, r *http.Request) {
@@ -47,7 +48,8 @@ func (app *application) routes() *http.ServeMux {
 		}
 		a.Write([]byte("La loopy"))
 	})
-	return mux
+	standard := alice.New(app.handlePanic, app.logRequest, secureHeader)
+	return standard.Then(mux)
 }
 
 func resolveAllTemplate() (map[string]*template.Template, error) {
