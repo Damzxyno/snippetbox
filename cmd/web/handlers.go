@@ -69,9 +69,8 @@ func (app *application) damzxyno(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("{\n\t\"Name\":\"Damilola\", \n\t\"Occupation\":\"Computer Scientist\"\n}"))
 }
 
-func (app *application) jiossm(w http.ResponseWriter, r *http.Request) {
-	w.WriteHeader(http.StatusAccepted)
-	w.Write([]byte("Welcome to JiossM ray!"))
+func (app *application) panic(w http.ResponseWriter, r *http.Request) {
+	panic("This is an intentional panic!")
 }
 
 type viewSnippets struct {
