@@ -2,10 +2,10 @@ package main
 
 import (
 	"database/sql"
-	"errors"
 	"flag"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
+	"github.com/julienschmidt/httprouter"
 	"github.com/justinas/alice"
 	"html/template"
 	"log"
@@ -29,25 +29,15 @@ type application struct {
 
 func (app *application) routes() http.Handler {
 	fS := http.FileServer(http.Dir("./ui/static/"))
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", app.home)
-	mux.HandleFunc("/about-us", app.aboutUs)
-	mux.HandleFunc("/damzxyno", app.damzxyno)
-	mux.HandleFunc("/panic", app.panic)
-	mux.Handle("/static/", http.StripPrefix("/static", fS))
-	mux.HandleFunc("/snippet/view", app.view)
-	mux.HandleFunc("/err", func(w http.ResponseWriter, r *http.Request) {
-		app.serverError(w, (errors.New("This is an information")))
-	})
-	mux.HandleFunc("/snippet/create", func(a http.ResponseWriter, b *http.Request) {
-		if b.Method != http.MethodPost {
-			a.Header().Set("Allow", http.MethodPost)
-			a.WriteHeader(http.StatusMethodNotAllowed)
-			a.Write([]byte("Aurevoir!"))
-			return
-		}
-		a.Write([]byte("La loopy"))
-	})
+	mux := httprouter.New()
+	mux.HandlerFunc(http.MethodGet, "/", app.home)
+	mux.HandlerFunc(http.MethodGet, "/about-us", app.aboutUs)
+	mux.HandlerFunc(http.MethodGet, "/damzxyno", app.damzxyno)
+	mux.HandlerFunc(http.MethodGet, "/panic", app.panic)
+	mux.Handler(http.MethodGet, "/static/", http.StripPrefix("/static", fS))
+	mux.HandlerFunc(http.MethodGet, "/snippet/view/:id", app.viewById)
+	mux.HandlerFunc(http.MethodGet, "/snippet/create", app.createSnippet)
+	mux.HandlerFunc(http.MethodPost, "/snippet/create", app.createSnippetPost)
 	standard := alice.New(app.handlePanic, app.logRequest, secureHeader)
 	return standard.Then(mux)
 }
@@ -117,13 +107,6 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-}
-
-func (g application) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-	g.infoLog.Println("This is an information")
-	//infoLog.Fatal("This is an error")
-	g.errLog.Println("This ia an information II")
-	g.errLog.Fatal("This is an error II")
 }
 
 func (app *application) serverError(w http.ResponseWriter, err error) {

@@ -2,7 +2,6 @@
 
 {{define "main"}}
 <div class='snippet'>
-    {{range .Snippets}}
     <div class='metadata'>
         <strong>{{.Title}}</strong>
         <span>#{{.ID}}</span>
@@ -12,6 +11,5 @@
         <time>Created: {{.Created}}</time>
         <time>Expires: {{.Expires}}</time>
     </div>
-    {{end}}
 </div>
 {{end}}
